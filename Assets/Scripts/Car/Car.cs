@@ -27,6 +27,8 @@ namespace UNIRacer.Car {
 		[SerializeField] private float finalDriveRatio;
 		[SerializeField] private float maxSteeringAngle;
 
+		[SerializeField] private float downwardForceFactor;
+
 		#endregion
 
 		#region private variables
@@ -120,6 +122,9 @@ namespace UNIRacer.Car {
 					i.rightWheel.steerAngle = steerAngle;
 				}
 			}
+
+			Vector3 force = Vector3.down * _speed * downwardForceFactor;
+			_rigidbody.AddForce(force);
 		}
 
 		void RotateWheel(WheelCollider wheel) {
