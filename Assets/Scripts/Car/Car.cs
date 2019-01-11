@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 namespace UNIRacer.Car {
 	public class Car : MonoBehaviour {
@@ -41,12 +44,27 @@ namespace UNIRacer.Car {
 		private float _minGear = 1;
 		private float _maxGear;
 
+		private float _speed;
+		private Rigidbody _rigidbody;
+		
 		#endregion
+
+		#region
+
+		public float Speed {
+			get { return _speed; }
+		}
+
+		#endregion
+		
 
 		#region CONSTANTS
 
 		#endregion
 
+		private void Awake() {
+			_rigidbody = this.GetComponent<Rigidbody>();
+		}
 
 		void Start() {
 			_engineRpm = engineTourqe.keys[0].time;
@@ -58,6 +76,8 @@ namespace UNIRacer.Car {
 
 		void Update() {
 			HandleInput();
+			if (_rigidbody)
+				_speed = _rigidbody.velocity.magnitude * 3.6f;
 		}
 
 		private void FixedUpdate() {
@@ -132,11 +152,12 @@ namespace UNIRacer.Car {
 			_right = Input.GetKey(rightKey);
 		}
 
+		private float p = 0;
 		void SwitchGear() {
-			float p = (_engineRpm - _minRpm) / (_maxRpm - _minRpm);
+			p = (_engineRpm - _minRpm) / (_maxRpm - _minRpm);
 			if (p < 0.1f && _gearIndex > _minGear)
 				_gearIndex--;
-			if (p > 0.1f && _gearIndex < _maxGear)
+			if (p > 0.9f && _gearIndex < _maxGear)
 				_gearIndex++;
 		}
 	}

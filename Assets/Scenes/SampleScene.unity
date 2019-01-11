@@ -477,13 +477,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7292218999851409524, guid: c816801d31a951b408054db448958887,
         type: 3}
-      propertyPath: maxSteeringAngle
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3548098395257489377, guid: c816801d31a951b408054db448958887,
-        type: 3}
-      propertyPath: m_Enabled
+      propertyPath: finalDriveRatio
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1200013
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.81031114
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.58599997
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228272778, guid: c816801d31a951b408054db448958887, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 71.747
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c816801d31a951b408054db448958887, type: 3}
