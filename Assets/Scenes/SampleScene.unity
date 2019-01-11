@@ -475,5 +475,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292218999851409524, guid: c816801d31a951b408054db448958887,
+        type: 3}
+      propertyPath: maxSteer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292218999851409524, guid: c816801d31a951b408054db448958887,
+        type: 3}
+      propertyPath: timeToMaxSteer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c816801d31a951b408054db448958887, type: 3}

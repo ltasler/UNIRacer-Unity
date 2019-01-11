@@ -731,6 +731,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  breakTorque: 800
   gearRatios:
     serializedVersion: 2
     m_Curve:
@@ -810,6 +811,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   finalDriveRatio: 10
+  maxSteer: 30
 --- !u!54 &8999086520423770875
 Rigidbody:
   m_ObjectHideFlags: 0

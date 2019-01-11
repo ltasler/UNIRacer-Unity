@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Car : MonoBehaviour {
 
@@ -7,10 +8,14 @@ public class Car : MonoBehaviour {
 	[SerializeField] private KeyCode left;
 	[SerializeField] private KeyCode right;
 	[SerializeField] private KeyCode shoot;
-	
+
 	[SerializeField] private AnimationCurve engineTourqe;
+	[SerializeField] private float breakTorque;
 	[SerializeField] private AnimationCurve gearRatios;
 	[SerializeField] private float finalDriveRatio;
+
+	[SerializeField] private float maxSteer;
+	//[SerializeField] private float timeToMaxSteer;
 
 	private Vector2 _inputDirecton;
 	private bool _shoot;
@@ -75,14 +80,35 @@ public class Car : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		float currentRpm = ((_backLeft.rpm + _backRight.rpm) / 2) 
-		                   * finalDriveRatio * gearRatios.Evaluate(_gearIndex);
-		float motorTorque = engineTourqe.Evaluate(currentRpm) * gearRatios.Evaluate(_gearIndex)
-		                                                      * finalDriveRatio;
+		if (_inputDirecton.y < 0) {
+			SetBraking(breakTorque);
+		}
+		else {
+			SetBraking(0);
+		}
+		if (_inputDirecton.y > 0) {
+			float currentRpm = ((_backLeft.rpm + _backRight.rpm) / 2) 
+			                   * finalDriveRatio * gearRatios.Evaluate(_gearIndex);
+			float motorTorque = engineTourqe.Evaluate(currentRpm) * gearRatios.Evaluate(_gearIndex)
+			                                                      * finalDriveRatio;
 		
-		//BWD
-		_backLeft.motorTorque = motorTorque / 2;
-		_backRight.motorTorque = motorTorque / 2;
+			//BWD
+			_backLeft.motorTorque = motorTorque / 2;
+			_backRight.motorTorque = motorTorque / 2;
+		}
+
+		//float curentSteerAngle = (_frontLeft.steerAngle + _frontRight.steerAngle) / 2;
+		float destSteerAngle = maxSteer * _inputDirecton.x;
+		//float actualSteerAngle = Math.Min(curentSteerAngle + destSteerAngle * Time.fixedDeltaTime * timeToMaxSteer, destSteerAngle);
+		_frontLeft.steerAngle = destSteerAngle;
+		_frontRight.steerAngle = destSteerAngle;
+	}
+
+	void SetBraking(float braking) {
+		_backLeft.brakeTorque = braking;
+		_backRight.brakeTorque = braking;
+		_frontLeft.brakeTorque = braking;
+		_frontRight.brakeTorque = braking;
 	}
 
 	void HandleInput() {
