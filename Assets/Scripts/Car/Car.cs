@@ -54,13 +54,11 @@ namespace UNIRacer.Car {
 		public float Speed {
 			get { return _speed; }
 		}
+		public Waypoint LastWaypoint { get; set; }
+		public int Lap { get; set; }
 
 		#endregion
 		
-
-		#region CONSTANTS
-
-		#endregion
 
 		private void Awake() {
 			_rigidbody = this.GetComponent<Rigidbody>();
@@ -72,6 +70,7 @@ namespace UNIRacer.Car {
 			_maxRpm = engineTourqe.keys[engineTourqe.keys.Length - 1].time;
 			_gearIndex = 1;
 			_maxGear = gearRatios.keys[gearRatios.keys.Length - 1].time;
+			LastWaypoint = null;
 		}
 
 		void Update() {
