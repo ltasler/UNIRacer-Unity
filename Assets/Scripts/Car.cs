@@ -1,51 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
+﻿using UnityEngine;
 
 public class Car : MonoBehaviour {
 
-    [SerializeField] 
-    float topSpeed;
+	[SerializeField] private KeyCode acceleration;
+	[SerializeField] private KeyCode deceleration;
+	[SerializeField] private KeyCode left;
+	[SerializeField] private KeyCode right;
+	[SerializeField] private KeyCode shoot;
+	
+	[SerializeField] private AnimationCurve engineTourqe;
+	[SerializeField] private AnimationCurve gearRatios;
+	[SerializeField] private float finalDriveRatio;
 
-    [SerializeField] 
-    float acclearationFactor;
+	private Vector2 _inputDirecton;
+	private bool _shoot;
 
-    [SerializeField] 
-    float rotationFactor;
+	private WheelCollider _frontLeft;
+	private const string FRONT_LEFT_WHEEL = "FrontLeft";
+	private WheelCollider _frontRight;
+	private const string FRONT_RIGHT_WHEEL = "FrontRight";
+	private WheelCollider _backLeft;
+	private const string BACK_LEFT_WHEEL = "BackLeft";
+	private WheelCollider _backRight;
+	private const string BACK_RIGHT_WHEEL = "FrontLeft";
+	
+	
+	private void Awake() {
+		for (int i = 0; i < this.transform.childCount; i++) {
+			
+		}
+	}
 
-    float _speed;
-    float _steer;
-    Transform _transform;
-    Rigidbody _rigidbody;
-   
-    // Start is called before the first frame update
-    void Start() {
-        _rigidbody = GetComponent<Rigidbody>();
-        _transform = GetComponent<Transform>();
-        _speed = 0.0f;
-    }
+	void Update() {
+		HandleInput();
+	}
 
-    // Update is called once per frame
-    void Update() {
-        HandleInput();
-    }
+	private void FixedUpdate() {
+		throw new System.NotImplementedException();
+	}
 
-    void FixedUpdate() {
-        Vector3 rotation = _transform.eulerAngles;
-        rotation.y += _steer * Time.fixedDeltaTime * rotationFactor;
-        _transform.localRotation = Quaternion.Euler(rotation);
-
-        Vector3 direction = _transform.forward * _speed * Time.fixedDeltaTime;
-        Debug.Log(direction);
-        Vector3 position = _transform.position + direction;
-        _rigidbody.MovePosition(position);
-    }
-    void HandleInput() {
-        _speed += -Input.GetAxis("Vertical") * acclearationFactor;
-
-        _steer = Input.GetAxis("Horizontal");
-    } 
+	void HandleInput() {
+		_inputDirecton = new Vector2(0.0f, 0.0f);
+		if (Input.GetKey(acceleration))
+			_inputDirecton.y += 1;
+		if (Input.GetKey(deceleration))
+			_inputDirecton.y -= 1;
+		if (Input.GetKey(left))
+			_inputDirecton.x -= 1;
+		if (Input.GetKey(right))
+			_inputDirecton.x += 1;
+		if (Input.GetKey(shoot))
+			_shoot = true;
+		else
+			_shoot = false;
+	}
 }
