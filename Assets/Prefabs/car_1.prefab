@@ -675,11 +675,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cc51c4f02d3724eb6ded3c3d984661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 119
-  deceleration: 115
-  left: 97
-  right: 100
-  shoot: 0
+  accelerationKey: 119
+  decelerationKey: 115
+  leftKey: 97
+  rightKey: 100
+  shootKey: 0
+  axleInfos:
+  - leftWheel: {fileID: 3342507797029938514}
+    rightWheel: {fileID: 6090513773334830205}
+    motor: 0
+    steering: 1
+  - leftWheel: {fileID: 780383831127887049}
+    rightWheel: {fileID: 5169552212369161023}
+    motor: 1
+    steering: 0
   engineTourqe:
     serializedVersion: 2
     m_Curve:
@@ -811,7 +820,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   finalDriveRatio: 10
-  maxSteer: 30
+  maxSteeringAngle: 30
 --- !u!54 &8999086520423770875
 Rigidbody:
   m_ObjectHideFlags: 0

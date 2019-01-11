@@ -428,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 875246937630529732, guid: c816801d31a951b408054db448958887,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 875246937630529732, guid: c816801d31a951b408054db448958887,
         type: 3}
@@ -477,12 +477,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7292218999851409524, guid: c816801d31a951b408054db448958887,
         type: 3}
-      propertyPath: maxSteer
-      value: 15
+      propertyPath: maxSteeringAngle
+      value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 7292218999851409524, guid: c816801d31a951b408054db448958887,
+    - target: {fileID: 3548098395257489377, guid: c816801d31a951b408054db448958887,
         type: 3}
-      propertyPath: timeToMaxSteer
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
