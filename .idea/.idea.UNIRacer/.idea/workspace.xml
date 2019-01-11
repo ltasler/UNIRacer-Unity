@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2256126-0828-47b1-9864-9c281b2dce60" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/car_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/car_1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Car/Car.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1097">
-              <caret line="163" column="1" lean-forward="true" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
+            <state relative-caret-position="727">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <marker date="1547239069867" expanded="true" signature="6:102" ph="..." />
                 <marker date="1547239069867" expanded="true" signature="207:3862" ph="{...}" />
@@ -44,15 +45,6 @@
                 <marker date="1547239069867" expanded="true" signature="3463:3634" ph="{...}" />
                 <marker date="1547239069867" expanded="true" signature="3679:3857" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="488" column="34" lean-forward="true" selection-start-line="488" selection-start-column="34" selection-end-line="488" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -194,7 +186,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23243000" />
+    <option name="totallyTimeSpent" value="24804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,7 +199,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1088" y="-841" width="1096" height="1896" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -286,10 +277,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="527" column="23" lean-forward="true" selection-start-line="527" selection-start-column="23" selection-end-line="527" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Car/Car.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1097">
-          <caret line="163" column="1" lean-forward="true" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
+        <state relative-caret-position="727">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
           <folding>
             <marker date="1547239069867" expanded="true" signature="6:102" ph="..." />
             <marker date="1547239069867" expanded="true" signature="207:3862" ph="{...}" />
@@ -317,13 +315,6 @@
             <marker date="1547239069867" expanded="true" signature="3463:3634" ph="{...}" />
             <marker date="1547239069867" expanded="true" signature="3679:3857" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="488" column="34" lean-forward="true" selection-start-line="488" selection-start-column="34" selection-end-line="488" selection-end-column="34" />
         </state>
       </provider>
     </entry>
